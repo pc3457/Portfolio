@@ -1,0 +1,50 @@
+# Site Information
+title: Parth Chaturvedi
+description: Information Systems | Full-Stack Developer | Cloud Enthusiast
+baseurl: "" # Leave blank for GitHub Pages
+url: "https://pc3457.github.io" # Replace with your GitHub Pages URL
+
+# Author Information
+author:
+  name: Parth Chaturvedi
+  email: pc3457@nyu.edu
+  github: https://github.com/pc3457
+  linkedin: https://www.linkedin.com/in/parthchaturvedi
+
+# Theme
+theme: minima # Use any supported Jekyll theme
+
+# Plugins
+plugins:
+  - jekyll-seo-tag # Adds SEO support
+  - jekyll-sitemap # Adds sitemap for search engines
+  - jekyll-feed # Adds RSS feed
+  - jekyll-paginate # Enables pagination for blogs
+
+# Navigation
+collections:
+  projects:
+    output: true
+    permalink: /projects/:title/
+
+# Pagination (if applicable)
+paginate: 5
+paginate_path: "/page:num"
+
+# Markdown Processing
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# Build Options
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle
+
+# Social Links (optional)
+social_links:
+  - github: https://github.com/pc3457
+  - linkedin: https://www.linkedin.com/in/parthchaturvedi
+  - email: mailto:pc3457@nyu.edu
