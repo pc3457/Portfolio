@@ -9,12 +9,30 @@
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hi, I'm <strong>Parth Chaturvedi</strong>. A graduate student at NYU specializing in backend development and cloud technologies.</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">Parth Chaturvedi</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Parth Chaturvedi</span></h1>
+            <p>A passionate <span class="highlight">Full-Stack Developer</span> and <span class="highlight">Cloud Enthusiast</span>.</p>
+            <a href="#projects" class="cta-btn">View My Work</a>
+        </div>
     </header>
+
+    <!-- Highlights Section -->
     <div class="container">
-        <section class="section">
+        <section class="section" id="about">
             <h2>Highlights</h2>
             <ul>
                 <li>💻 Expertise in <strong>Java, Python, AWS, and Azure</strong>.</li>
@@ -22,16 +40,34 @@
                 <li>🚀 Interested in <strong>fintech</strong> and <strong>AI-driven solutions</strong>.</li>
             </ul>
         </section>
-        <section class="section">
-            <h2>Explore More</h2>
-            <ul>
-                <li><a href="/about/">About Me</a></li>
-                <li><a href="/projects/">My Projects</a></li>
-                <li><a href="mailto:pc3457@nyu.edu">Contact Me</a></li>
-            </ul>
+
+        <!-- Projects Section -->
+        <section class="section" id="projects">
+            <h2>My Projects</h2>
+            <div class="card">
+                <h3>Bloggers' Section</h3>
+                <p>Increased blog traction by 20% by creating a platform for trending topics.</p>
+                <a href="https://github.com/pc3457/bloggers-section" class="btn">View on GitHub</a>
+            </div>
+            <div class="card">
+                <h3>Car Rental Website</h3>
+                <p>Built a full-stack application using Spring Boot and Azure ML.</p>
+                <a href="https://github.com/pc3457/car-rental" class="btn">View on GitHub</a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:pc3457@nyu.edu">pc3457@nyu.edu</a></p>
         </section>
     </div>
+
+    <!-- Footer -->
     <footer>
+        <p>Connect with me:</p>
+        <a href="https://github.com/pc3457" class="social-link"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/parthchaturvedi" class="social-link"><i class="fab fa-linkedin"></i></a>
         <p>&copy; 2025 Parth Chaturvedi. All rights reserved.</p>
     </footer>
 </body>
