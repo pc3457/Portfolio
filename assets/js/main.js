@@ -1,13 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Dynamic Text for Hero Section
+    // Dynamic Text Functionality
     const skills = ["Full-Stack Developer", "Cloud Enthusiast", "Problem Solver", "Backend Specialist"];
     let currentSkill = 0;
 
     function updateDynamicText() {
         const dynamicText = document.getElementById("dynamic-text");
 
-        // Safeguard in case the element is missing
-        if (!dynamicText) return;
+        // Safeguard: Stop if the element is not found
+        if (!dynamicText) {
+            console.error("Dynamic text element (#dynamic-text) not found in the DOM.");
+            return;
+        }
 
         // Update text
         dynamicText.textContent = skills[currentSkill];
@@ -19,12 +22,15 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(updateDynamicText, 2000);
     }
 
-    // Initialize dynamic text updates
+    // Initialize the dynamic text updates
     updateDynamicText();
 
-    // Dynamic Glowing Wave Background
+    // Dynamic Wave Background Functionality
     const canvas = document.getElementById('wave-canvas');
-    if (!canvas) return;
+    if (!canvas) {
+        console.error("Canvas element (#wave-canvas) not found in the DOM.");
+        return;
+    }
 
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
