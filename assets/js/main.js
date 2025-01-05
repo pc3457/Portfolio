@@ -1,46 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Dynamic Text Functionality
-    const skills = ["Full-Stack Developer", "Cloud Enthusiast", "Problem Solver", "Backend Specialist"];
-    let currentSkill = 0;
-
-    function updateDynamicText() {
-        const dynamicText = document.getElementById("dynamic-text");
-
-        // Safeguard: Stop if the element is not found
-        if (!dynamicText) {
-            console.error("Dynamic text element (#dynamic-text) not found in the DOM.");
-            return;
-        }
-
-        // Update text
-        dynamicText.textContent = skills[currentSkill];
-
-        // Move to next skill
-        currentSkill = (currentSkill + 1) % skills.length;
-
-        // Change text every 2 seconds
-        setTimeout(updateDynamicText, 2000);
-    }
-
-    // Initialize the dynamic text updates
-    updateDynamicText();
-
     // Dynamic Wave Background Functionality
     const canvas = document.getElementById('wave-canvas');
-    if (!canvas) {
-        console.error("Canvas element (#wave-canvas) not found in the DOM.");
-        return;
-    }
-
     const ctx = canvas.getContext('2d');
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    let waveHeight = 200;
-    let waveSpeed = 0.02;
-    let waveFrequency = 0.01;
+    let waveHeight = 200; // Adjust wave height
+    let waveSpeed = 0.02; // Adjust wave speed
+    let waveFrequency = 0.01; // Adjust wave frequency
     let phase = 0;
 
+    // Adjust canvas size on window resize
     window.addEventListener('resize', () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -49,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function drawWave() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+        // Create gradient for the wave
         const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
         gradient.addColorStop(0, 'rgba(0, 224, 255, 0.6)');
         gradient.addColorStop(0.5, 'rgba(0, 128, 255, 0.3)');
@@ -78,5 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
         requestAnimationFrame(animateWave);
     }
 
+    // Start the wave animation
     animateWave();
 });
