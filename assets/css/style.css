@@ -311,7 +311,7 @@ section {
     color: white;
     font-size: 1rem;
     opacity: 0; /* Start hidden */
-    animation: fadeIn 1s ease-in-out forwards;
+    animation: fadeIn 1s ease-in-out forwards; /* Ensures it stays visible */
     animation-delay: 1.2s; /* Scroll-down appears last */
 }
 
@@ -330,7 +330,17 @@ section {
     border: 2px solid white;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg); /* Rotate for downward pointing */
-    animation: bounce 2s infinite; /* Keep bounce animation */
+    animation: bounce 2s infinite; /* Bounce animation remains */
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start hidden */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+    }
 }
 
 /* Animations */
