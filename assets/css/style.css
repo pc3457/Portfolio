@@ -13,17 +13,34 @@ h1, h2, h3 {
 }
 
 /* Hero Section */
-.hero {
-    position: relative;
-    height: 100vh;
+.hero-container {
     display: flex;
+    align-items: center; /* Aligns items vertically */
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    overflow: hidden;
-    color: white;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    gap: 20px; /* Adds space between text and image */
+    padding: 20px;
 }
 
+.hero-text {
+    flex: 1;
+    max-width: 50%; /* Restrict width for alignment */
+    text-align: left;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 50%; /* Restrict image width */
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%; /* Makes the image responsive */
+    max-width: 300px; /* Limits the maximum width */
+    border-radius: 15px; /* Slightly rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adds a shadow */
+}
 /* Canvas Background */
 #wave-canvas {
     position: absolute;
@@ -37,7 +54,7 @@ h1, h2, h3 {
 
 /* Hero Content */
 .hero-content h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 15px;
 }
@@ -394,4 +411,28 @@ footer {
     50% {
         transform: rotate(45deg) translateY(10px);
     }
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #005fa3; /* Matches your theme */
+    color: white;
+    font-size: 0.9rem;
+}
+
+.footer .social-icons {
+    margin-top: 10px;
+}
+
+.footer .social-icons a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    color: #00e0ff; /* Highlight color on hover */
 }
