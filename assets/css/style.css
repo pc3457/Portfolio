@@ -270,12 +270,13 @@ footer {
 }
 
 .hero-image img {
-    width: 100%; /* Make the image responsive */
-    max-width: 300px; /* Limit the maximum width */
+    display: block; /* Ensures the image centers properly */
+    margin: 20px auto; /* Add space above and below the image */
+    max-width: 300px; /* Restrict the maximum width of the image */
     height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Slightly rounded corners for a clean look */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
-    object-fit: cover; /* Ensures the image scales properly */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Add shadow */
+    object-fit: cover; /* Keep the image aspect ratio consistent */
 }
 
 .btn-glow:hover {
@@ -284,10 +285,9 @@ footer {
     box-shadow: 0px 0px 20px 5px #005fa3;
 }
 
-/* Scroll Down Section */
 .scroll-down {
     position: absolute;
-    bottom: 30px; /* Position near the bottom */
+    bottom: 30px; /* Position it near the bottom of the hero section */
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -304,12 +304,13 @@ footer {
 }
 
 .scroll-down .arrow-down {
-    margin: 10px auto 0;
-    width: 20px;
-    height: 20px;
+    display: inline-block;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
     border: 2px solid white;
     border-width: 0 2px 2px 0;
-    transform: rotate(45deg); /* Downward direction */
+    transform: rotate(45deg); /* Rotate for downward pointing */
     animation: bounce 2s infinite;
 }
 
@@ -417,7 +418,7 @@ footer {
 .footer {
     text-align: center;
     padding: 20px;
-    background-color: #005fa3; /* Matches your theme */
+    background: #005fa3;
     color: white;
     font-size: 0.9rem;
 }
@@ -434,5 +435,5 @@ footer {
 }
 
 .footer .social-icons a:hover {
-    color: #00e0ff; /* Highlight color on hover */
+    color: #00e0ff; /* Change to highlight color on hover */
 }
