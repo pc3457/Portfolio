@@ -131,7 +131,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background-color: rgba(0, 0, 0, 0.8); /* Slight transparency */
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background */
     z-index: 1000; /* Ensure it stays on top */
 }
 
@@ -148,6 +148,10 @@ footer {
     gap: 20px;
     margin: 0;
     padding: 0;
+}
+
+.navbar .nav-links li {
+    display: inline-block;
 }
 
 .navbar .nav-links a {
@@ -266,7 +270,7 @@ footer {
 /* Scroll Down Section */
 .scroll-down {
     position: absolute;
-    bottom: 30px; /* Position it near the bottom of the hero section */
+    bottom: 30px; /* Position near the bottom */
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -282,15 +286,24 @@ footer {
     color: #ffffff;
 }
 
-.arrow-down {
-    display: inline-block;
-    margin-top: 10px;
-    width: 30px;
-    height: 30px;
+.scroll-down .arrow-down {
+    margin: 10px auto 0;
+    width: 20px;
+    height: 20px;
     border: 2px solid white;
-    border-width: 2px 2px 0 0;
-    transform: rotate(45deg);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg); /* Downward direction */
     animation: bounce 2s infinite;
+}
+
+/* Arrow Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: rotate(45deg) translateY(0);
+    }
+    50% {
+        transform: rotate(45deg) translateY(10px);
+    }
 }
 
 /* Bounce Animation for Arrow */
