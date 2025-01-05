@@ -254,22 +254,19 @@ section {
 .hero-title {
     font-size: 3rem;
     margin-bottom: 20px;
+    opacity: 0; /* Start hidden */
+    transform: translateY(-20px); /* Start slightly above */
+    animation: fadeInUp 1s ease-in-out forwards;
+    animation-delay: 0.3s; /* Delays animation by 0.3s */
 }
 
 .hero-subtitle {
     font-size: 1.2rem;
     margin-bottom: 20px;
-}
-
-.btn-glow {
-    padding: 15px 30px;
-    background: #00e0ff;
-    color: black;
-    border-radius: 5px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0px 0px 10px 2px #00e0ff;
+    opacity: 0; /* Start hidden */
+    transform: translateY(-20px); /* Start slightly above */
+    animation: fadeInUp 1s ease-in-out forwards;
+    animation-delay: 0.6s; /* Subtitle appears after title */
 }
 
 .hero-image img {
@@ -282,16 +279,21 @@ section {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     object-fit: cover;
+    opacity: 0; /* Start hidden */
+    transform: scale(0.8); /* Start slightly scaled down */
+    animation: fadeInZoom 1s ease-in-out forwards;
+    animation-delay: 0.9s; /* Image appears after subtitle */
 }
 
-.hero-image img {
-    display: block; /* Ensures the image centers properly */
-    margin: 20px auto; /* Add space above and below the image */
-    max-width: 300px; /* Restrict the maximum width of the image */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Add shadow */
-    object-fit: cover; /* Keep the image aspect ratio consistent */
+.btn-glow {
+    padding: 15px 30px;
+    background: #00e0ff;
+    color: black;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 0px 10px 2px #00e0ff;
 }
 
 .btn-glow:hover {
@@ -308,7 +310,9 @@ section {
     text-align: center;
     color: white;
     font-size: 1rem;
-    animation: fadeIn 2s ease-in-out;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 1.2s; /* Scroll-down appears last */
 }
 
 .scroll-down p {
@@ -326,7 +330,39 @@ section {
     border: 2px solid white;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg); /* Rotate for downward pointing */
-    animation: bounce 2s infinite;
+    animation: bounce 2s infinite; /* Keep bounce animation */
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Start slightly above */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.8); /* Start scaled down */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* Return to full size */
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start hidden */
+    }
+    100% {
+        opacity: 1; /* Fade in */
+    }
 }
 
 /* Arrow Animation */
