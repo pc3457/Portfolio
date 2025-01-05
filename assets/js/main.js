@@ -1,55 +1,55 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Dynamic Wave Background Functionality
-    const canvas = document.getElementById('wave-canvas');
-    const ctx = canvas.getContext('2d');
+    // Dynamic Moving Background Functionality
+    const canvas = document.getElementById("wave-canvas"); // Reusing the canvas element
+    const ctx = canvas.getContext("2d");
 
+    // Set initial canvas size
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    let waveHeight = 200; // Adjust wave height
-    let waveSpeed = 0.02; // Adjust wave speed
-    let waveFrequency = 0.01; // Adjust wave frequency
-    let phase = 0;
+    // Gradient position variables
+    let gradientPositionX = 0;
+    let gradientPositionY = 0;
+    const speedX = 0.5; // Horizontal movement speed
+    const speedY = 0.3; // Vertical movement speed
 
-    // Adjust canvas size on window resize
-    window.addEventListener('resize', () => {
+    // Resize canvas dynamically on window resize
+    window.addEventListener("resize", () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     });
 
-    function drawWave() {
+    function drawGradientBackground() {
+        // Clear the canvas
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Create gradient for the wave
-        const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-        gradient.addColorStop(0, 'rgba(0, 224, 255, 0.6)');
-        gradient.addColorStop(0.5, 'rgba(0, 128, 255, 0.3)');
-        gradient.addColorStop(1, 'rgba(0, 224, 255, 0.6)');
+        // Create a dynamic gradient
+        const gradient = ctx.createLinearGradient(
+            gradientPositionX,
+            gradientPositionY,
+            canvas.width + gradientPositionX,
+            canvas.height + gradientPositionY
+        );
+        gradient.addColorStop(0, "#005fa3"); // Blue shade
+        gradient.addColorStop(0.5, "#00e0ff"); // Neon blue
+        gradient.addColorStop(1, "#005fa3"); // Blue shade
 
-        ctx.beginPath();
-        ctx.moveTo(0, canvas.height / 2);
-
-        for (let x = 0; x <= canvas.width; x++) {
-            const y =
-                canvas.height / 2 +
-                waveHeight * Math.sin((x * waveFrequency) + phase);
-            ctx.lineTo(x, y);
-        }
-
-        ctx.lineTo(canvas.width, canvas.height);
-        ctx.lineTo(0, canvas.height);
-        ctx.closePath();
-
+        // Fill the canvas with the gradient
         ctx.fillStyle = gradient;
-        ctx.fill();
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Update gradient position
+        gradientPositionX += speedX;
+        gradientPositionY += speedY;
+
+        // Reset gradient position for seamless looping
+        if (gradientPositionX > canvas.width) gradientPositionX = 0;
+        if (gradientPositionY > canvas.height) gradientPositionY = 0;
+
+        // Call the draw function on the next frame
+        requestAnimationFrame(drawGradientBackground);
     }
 
-    function animateWave() {
-        phase += waveSpeed;
-        drawWave();
-        requestAnimationFrame(animateWave);
-    }
-
-    // Start the wave animation
-    animateWave();
+    // Start the gradient animation
+    drawGradientBackground();
 });
