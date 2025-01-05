@@ -122,18 +122,17 @@ footer {
     color: white;
 }
 
-/* Navigation Banner */
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(18, 18, 18, 0.9); /* Semi-transparent black */
-    color: white;
-    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000; /* Ensure it stays above all elements */
+    padding: 15px 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Slight transparency */
+    z-index: 1000; /* Ensure it stays on top */
 }
 
 .navbar .logo {
@@ -147,12 +146,19 @@ footer {
     list-style: none;
     display: flex;
     gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar .nav-links a {
-    color: #f4f4f9;
+    color: #ffffff;
     font-weight: 500;
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #00e0ff; /* Highlight on hover */
 }
 
 /* Blurred Gradient Wave */
@@ -335,4 +341,44 @@ footer {
 .btn-secondary:hover {
     background-color: #00e0ff;
     transform: translateY(-2px);
+}
+
+/* Scroll Down Section */
+.scroll-down {
+    position: absolute;
+    bottom: 30px; /* Position it near the bottom of the hero section */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.scroll-down p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.scroll-down .arrow-down {
+    display: inline-block;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg); /* Rotate for downward pointing */
+    animation: bounce 2s infinite;
+}
+
+/* Bounce Animation for Arrow */
+@keyframes bounce {
+    0%, 100% {
+        transform: rotate(45deg) translateY(0);
+    }
+    50% {
+        transform: rotate(45deg) translateY(10px);
+    }
 }
