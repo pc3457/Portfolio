@@ -1,65 +1,74 @@
-// Initialize Particles.js for animated background
-particlesJS("particles-js", {
-    particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: "#00e0ff" },
-        shape: {
-            type: "circle",
-            stroke: { width: 0, color: "#000000" },
-            polygon: { nb_sides: 5 }
-        },
-        opacity: {
-            value: 0.5,
-            random: false,
-            anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false }
-        },
-        size: {
-            value: 5,
-            random: true,
-            anim: { enable: false, speed: 40, size_min: 0.1, sync: false }
-        },
-        line_linked: {
-            enable: true,
-            distance: 150,
-            color: "#00e0ff",
-            opacity: 0.4,
-            width: 1
-        },
-        move: {
-            enable: true,
-            speed: 6,
-            direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-            attract: { enable: false, rotateX: 600, rotateY: 1200 }
-        }
-    },
-    interactivity: {
-        detect_on: "canvas",
-        events: {
-            onhover: { enable: true, mode: "repulse" },
-            onclick: { enable: true, mode: "push" },
-            resize: true
-        },
-        modes: {
-            grab: { distance: 400, line_linked: { opacity: 1 } },
-            bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
-            repulse: { distance: 200, duration: 0.4 },
-            push: { particles_nb: 4 },
-            remove: { particles_nb: 2 }
-        }
-    },
-    retina_detect: true
+// Dynamic Text for Hero Section
+const skills = ["Full-Stack Developer", "Cloud Enthusiast", "Problem Solver", "Backend Specialist"];
+let currentSkill = 0;
+
+function updateDynamicText() {
+    const dynamicText = document.getElementById("dynamic-text");
+
+    // Update text
+    dynamicText.textContent = skills[currentSkill];
+
+    // Move to next skill
+    currentSkill = (currentSkill + 1) % skills.length;
+
+    // Change text every 2 seconds
+    setTimeout(updateDynamicText, 2000);
+}
+
+// Initialize dynamic text updates
+updateDynamicText();
+
+// Dynamic Glowing Wave Background
+const canvas = document.getElementById('wave-canvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let waveHeight = 200; // Wave height
+let waveSpeed = 0.02; // Wave speed
+let waveFrequency = 0.01; // Wave frequency
+let phase = 0;
+
+// Adjust canvas size on window resize
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 });
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
+function drawWave() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Gradient for the glowing effect
+    const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+    gradient.addColorStop(0, 'rgba(0, 224, 255, 0.6)');
+    gradient.addColorStop(0.5, 'rgba(0, 128, 255, 0.3)');
+    gradient.addColorStop(1, 'rgba(0, 224, 255, 0.6)');
+
+    ctx.beginPath();
+    ctx.moveTo(0, canvas.height / 2);
+
+    for (let x = 0; x <= canvas.width; x++) {
+        const y =
+            canvas.height / 2 +
+            waveHeight * Math.sin((x * waveFrequency) + phase);
+        ctx.lineTo(x, y);
+    }
+
+    ctx.lineTo(canvas.width, canvas.height);
+    ctx.lineTo(0, canvas.height);
+    ctx.closePath();
+
+    ctx.fillStyle = gradient;
+    ctx.fill();
+}
+
+// Animate the wave
+function animateWave() {
+    phase += waveSpeed;
+    drawWave();
+    requestAnimationFrame(animateWave);
+}
+
+// Start the wave animation
+animateWave();
