@@ -1,19 +1,20 @@
-/* General Styles */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    color: #fff; /* Make text white by default */
+    color: #333;
     background: none;
     line-height: 1.6;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
 }
 
 /* Navbar */
 .navbar {
+    font-family: 'Roboto', sans-serif;
     position: fixed;
     top: 0;
     width: 100%;
@@ -130,6 +131,20 @@ body::before {
 }
 
 /* Hero Text Fade-In Animation */
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #eff4f5;
+}
+
+.hero p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #d0d7db;
+}
 .hero h1,
 .hero p {
     opacity: 0; /* Start hidden */
@@ -200,6 +215,23 @@ body::before {
 }
 
 /* Section Styles */
+.section-container h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* General Text */
+.section-container p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #d0d7db;
+}
+
 section {
     position: relative;
     padding: 60px 20px;
@@ -212,13 +244,6 @@ section {
     z-index: 2;
 }
 
-.section-container h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: white; /* Ensure headings are white */
-    font-weight: bold;
-    text-transform: uppercase;
-}
 
 /* About Section */
 .about p {
@@ -278,6 +303,8 @@ section {
 
 /* Footer */
 .footer {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
     text-align: center;
     padding: 20px;
     background: #000;
