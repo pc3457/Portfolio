@@ -23,7 +23,8 @@ h1, h2, h3 {
     display: flex;
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
-    gap: 10px; /* Add spacing between brand, separator, and links */
+    gap: 10px; /* Add spacing between items */
+    white-space: nowrap; /* Prevent items from wrapping onto the next line */
     transition: transform 0.3s ease-in-out; /* Smooth transition for hiding */
 }
 
