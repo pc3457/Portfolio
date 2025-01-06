@@ -20,30 +20,47 @@ h1, h2, h3 {
     z-index: 1000;
     background: rgba(0, 0, 0, 0.8);
     padding: 15px 20px;
-    transition: transform 0.3s  ease-in-out; /* Smooth transition for hiding */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    gap: 10px; /* Add spacing between brand, separator, and links */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hiding */
 }
 
 .navbar.hidden {
     transform: translateY(-100%); /* Moves the navbar out of view */
 }
 
-.navbar .logo {
+.navbar .nav-brand {
     font-size: 1.5rem;
     font-weight: 700;
     color: #eff4f5;
     text-decoration: none;
 }
 
+.navbar .nav-separator {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+}
+
 .navbar .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar .nav-links a {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #00e0ff; /* Highlight on hover */
 }
 
 /* Background */
