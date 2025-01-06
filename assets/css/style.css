@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background: #f9f9f9;
@@ -12,14 +12,48 @@ h1, h2, h3 {
     margin: 0;
 }
 
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 20px;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00e0ff;
+    text-decoration: none;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
 /* Hero Section */
+.hero {
+    position: relative;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+}
+
 .hero-container {
     display: flex;
-    align-items: center; /* Aligns items vertically */
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap; /* Allows wrapping for smaller screens */
-    gap: 20px; /* Adds space between text and image */
-    padding: 20px;
+    flex-wrap: wrap;
 }
 
 .hero-text {
@@ -28,153 +62,50 @@ h1, h2, h3 {
     text-align: left;
 }
 
-.hero-image {
-    flex: 1;
-    max-width: 50%;
-    display: flex;
-    justify-content: center;
-}
-
 .hero-image img {
-    width: 100%;
     max-width: 300px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Scroll-Down Section */
+/* Moving Background */
+.moving-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(120deg, #005fa3, #00e0ff, #005fa3);
+    background-size: 300% 300%;
+    animation: moveBackground 8s infinite linear;
+}
+
+@keyframes moveBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Scroll-Down */
 .scroll-down {
     position: absolute;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    text-align: center;
-    color: white;
-    font-size: 1rem;
-    opacity: 1; /* Ensure visible */
-    animation: fadeIn 1s ease-in-out forwards;
-    animation-delay: 1.2s;
-}
-
-.scroll-down p {
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: 500;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .scroll-down .arrow-down {
-    display: inline-block;
     margin-top: 10px;
     width: 30px;
     height: 30px;
     border: 2px solid white;
-    border-width: 0 2px 2px 0;
     transform: rotate(45deg);
-    animation: bounce 2s infinite ease-in-out;
-}
-
-/* Fade-In Animation */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInZoom {
-    0% {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+    animation: bounce 2s infinite;
 }
 
 @keyframes bounce {
-    0%, 100% {
-        transform: rotate(45deg) translateY(0);
-    }
-    50% {
-        transform: rotate(45deg) translateY(10px);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero-container {
-        flex-direction: column; /* Stack content vertically */
-    }
-
-    .hero-text {
-        text-align: center;
-        max-width: 90%; /* Allow full width for text */
-    }
-
-    .hero-image img {
-        max-width: 200px; /* Smaller image size for mobile */
-    }
-
-    .scroll-down {
-        bottom: 20px;
-    }
-
-    .scroll-down .arrow-down {
-        width: 25px;
-        height: 25px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-text {
-        text-align: center;
-        max-width: 100%; /* Full width for small screens */
-    }
-
-    .hero-image img {
-        max-width: 150px;
-    }
-
-    .scroll-down .arrow-down {
-        width: 20px;
-        height: 20px;
-    }
-}
-
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 20px;
-    background: #333;
-    color: white;
-}
-
-.footer .social-icons {
-    margin-top: 10px;
-}
-
-.footer .social-icons a {
-    margin: 0 10px;
-    font-size: 1.5rem;
-    color: white;
-    transition: color 0.3s ease;
-}
-
-.footer .social-icons a:hover {
-    color: #00e0ff;
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(10px); }
 }
