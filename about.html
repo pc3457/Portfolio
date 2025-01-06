@@ -12,25 +12,72 @@
     <body>
         <!-- Navbar -->
         <nav class="navbar">
-            <span class="nav-brand">Parth Chaturvedi</span>
-            <span class="nav-separator">|</span>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="container">
+                <a href="index.html" class="nav-brand">Parth Chaturvedi</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
         </nav>
 
         <!-- About Section -->
         <section class="about-section">
             <div class="section-container">
-                <h2>About Me</h2>
-                <p>
-                    I'm a graduate student at NYU specializing in backend development and cloud technologies. 
-                    I create efficient and scalable solutions for complex challenges.
-                </p>
-                <a href="assets/files/resume.pdf" target="_blank" class="btn-secondary">View My Resume</a>
+                <!-- Photo and Introduction -->
+                <div class="about-intro">
+                    <div class="about-photo">
+                        <img src="assets/images/profile.jpeg" alt="Parth Chaturvedi">
+                    </div>
+                    <div class="about-text">
+                        <h2>About Me</h2>
+                        <p>
+                            I'm a graduate student at NYU specializing in backend development and cloud technologies. 
+                            I create efficient and scalable solutions for complex challenges.
+                        </p>
+                        <a href="assets/files/resume.pdf" target="_blank" class="btn-secondary">View My Resume</a>
+                    </div>
+                </div>
+
+                <!-- Current Works -->
+                <div class="about-details">
+                    <h3>Current Works</h3>
+                    <ul>
+                        <li>Working on a multi-language bot system for trading simulations.</li>
+                        <li>Developing automation scripts for job applications using Selenium.</li>
+                    </ul>
+                </div>
+
+                <!-- Subjects at NYU -->
+                <div class="about-details">
+                    <h3>Subjects at NYU</h3>
+                    <ul>
+                        <li>Database Management Systems</li>
+                        <li>Cloud Computing</li>
+                        <li>Fundamentals of Algorithms</li>
+                    </ul>
+                </div>
+
+                <!-- Undergraduate Education -->
+                <div class="about-details">
+                    <h3>Undergraduate Education</h3>
+                    <p>B.Tech in Computer Science and Engineering from Maulana Azad National Institute of Technology, Bhopal.</p>
+                </div>
+
+                <!-- Skills -->
+                <div class="about-details">
+                    <h3>Skills</h3>
+                    <ul class="skills-list">
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>C++</li>
+                        <li>Cloud Technologies (AWS, Azure, GCP)</li>
+                        <li>Full-Stack Development</li>
+                        <li>Agile Methodologies</li>
+                    </ul>
+                </div>
             </div>
         </section>
 

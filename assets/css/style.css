@@ -301,6 +301,64 @@ section {
     color: #bbb;
 }
 
+/* About Section */
+.about-section .section-container {
+    max-width: 1000px; /* Wider container */
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.8); /* Match main page */
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* About Intro */
+.about-intro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-photo img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%; /* Circular photo */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.about-text {
+    max-width: 500px;
+}
+
+.about-details {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.about-details h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.about-details ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #d0d7db;
+    font-family: 'Roboto', sans-serif;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Grid layout for skills */
+    gap: 10px;
+    margin-top: 15px;
+}
+
 /* Footer */
 .footer {
     font-family: 'Roboto', sans-serif;
