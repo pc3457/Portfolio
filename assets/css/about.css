@@ -8,8 +8,8 @@ body {
     line-height: 1.6;
 }
 
-/* Navbar for About Page */
-.navbar-about {
+/* Reusing Navbar from Main Page */
+.navbar {
     font-family: 'Roboto', sans-serif;
     position: fixed;
     top: 0;
@@ -24,14 +24,14 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.navbar-about .nav-brand {
+.navbar .nav-brand {
     font-size: 1.5rem;
     font-weight: 700;
     color: #eff4f5;
     text-decoration: none;
 }
 
-.navbar-about .nav-links {
+.navbar .nav-links {
     list-style: none;
     display: flex;
     gap: 15px;
@@ -39,14 +39,14 @@ body {
     padding: 0;
 }
 
-.navbar-about .nav-links a {
+.navbar .nav-links a {
     color: white;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.navbar-about .nav-links a:hover {
+.navbar .nav-links a:hover {
     color: #00e0ff;
 }
 
@@ -59,14 +59,14 @@ body {
     text-align: center;
     min-height: 100vh; /* Full viewport height */
     padding: 60px 20px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7); /* Slightly lighter background */
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 .about-section .section-container {
     max-width: 800px;
     padding: 40px 20px;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.5); /* Lighter transparent background */
     border-radius: 10px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
@@ -106,25 +106,25 @@ body {
 }
 
 /* Footer for About Page */
-.footer-about {
+.footer {
     text-align: center;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.8);
     color: white;
     font-size: 0.9rem;
 }
 
-.footer-about .social-icons {
+.footer .social-icons {
     margin-top: 10px;
 }
 
-.footer-about .social-icons a {
+.footer .social-icons a {
     margin: 0 10px;
     font-size: 1.2rem;
     color: white;
     transition: color 0.3s ease;
 }
 
-.footer-about .social-icons a:hover {
+.footer .social-icons a:hover {
     color: #00e0ff;
 }
