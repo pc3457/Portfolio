@@ -101,86 +101,111 @@ body::before {
     height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
+    justify-content: space-around; /* Add spacing between elements */
     align-items: center;
     text-align: center;
+    padding: 20px 0; /* Add vertical padding */
 }
 
 .hero-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px; /* Increase gap for better spacing */
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .hero-text {
     flex: 1;
-    max-width: 50%;
+    max-width: 60%; /* Slightly wider text block */
     text-align: left;
-    z-index: 1; /* Ensure text stays above the background */
-}
-
-.hero-image img {
-    max-width: 300px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
-/* Hero Text Fade-In Animation */
 .hero h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 15px;
+    font-size: 4rem; /* Larger font for a stronger impact */
+    font-weight: 800;
+    margin-bottom: 20px;
     color: #eff4f5;
+    line-height: 1.2; /* Adjust line spacing */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards 0.3s; /* Delayed appearance */
 }
 
 .hero p {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* Larger and clearer font */
     font-weight: 400;
     color: #d0d7db;
-}
-.hero h1,
-.hero p {
-    opacity: 0; /* Start hidden */
-    transform: translateY(20px); /* Start slightly below */
-    animation: fadeInUp 1s ease-in-out forwards;
+    margin-bottom: 30px; /* Add spacing below the paragraph */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards 0.6s; /* Slight delay */
 }
 
-.hero h1 {
-    animation-delay: 0.5s; /* Delayed appearance for the title */
+.hero .hero-status {
+    font-size: 1.2rem;
+    color: #00e0ff; /* Highlighted text for the status */
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards 0.9s;
 }
 
-.hero p {
-    animation-delay: 1s; /* Delayed appearance for the subtitle */
+/* Buttons in Hero Section */
+.hero-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards 1.1s; /* Slight delay */
 }
 
-/* Keyframes for Fade-In Animation */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px); /* Start slightly below */
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0); /* Move to the original position */
-    }
+.hero-buttons a {
+    padding: 12px 25px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #005fa3;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add box shadow */
+}
+
+.hero-buttons a:hover {
+    background-color: #00e0ff;
+    transform: translateY(-2px); /* Subtle hover effect */
+}
+
+.hero-image img {
+    max-width: 350px; /* Slightly larger image */
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6); /* Stronger shadow */
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards 1.3s; /* Delayed appearance */
 }
 
 /* Scroll-Down Section */
 .scroll-down {
     position: absolute;
-    bottom: 30px; /* Keep it at the bottom of the section */
+    bottom: 20px; /* Keep it at the bottom */
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
     z-index: 2;
     color: white;
+    font-size: 1rem;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .scroll-down p {
@@ -190,19 +215,25 @@ body::before {
 }
 
 .scroll-down .arrow-down {
-    display: inline-block;
-    margin-top: 10px; /* Add space between text and arrow */
-    width: 20px;
-    height: 20px;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
     border: 2px solid white;
     border-width: 0 2px 2px 0;
-    transform: rotate(45deg); /* Rotates the arrow */
+    transform: rotate(45deg); /* Downward arrow */
     animation: bounce 2s infinite ease-in-out;
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+/* Keyframes */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes bounce {
@@ -213,7 +244,6 @@ body::before {
         transform: rotate(45deg) translateY(10px);
     }
 }
-
 /* Section Styles */
 .section-container h2 {
     font-family: 'Montserrat', sans-serif;
