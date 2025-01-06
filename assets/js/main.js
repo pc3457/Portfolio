@@ -1,70 +1,71 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Dynamic Moving Background Functionality
-    const canvas = document.getElementById("wave-canvas"); // Reusing the canvas element
+    const canvas = document.getElementById("wave-canvas");
     const ctx = canvas.getContext("2d");
 
-    // Navbar functionality
+    // Navbar hide/show functionality
     const navbar = document.querySelector(".navbar");
     let lastScrollY = window.scrollY;
+    let isScrollingDown = false;
 
     window.addEventListener("scroll", () => {
-        if (window.scrollY > lastScrollY) {
-            // Scrolling down
-            navbar.style.transform = "translateY(-100%)"; // Move navbar out of view
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > lastScrollY && currentScrollY > 50) {
+            // User is scrolling down
+            if (!isScrollingDown) {
+                navbar.style.transform = "translateY(-100%)";
+                isScrollingDown = true;
+            }
         } else {
-            // Scrolling up
-            navbar.style.transform = "translateY(0)"; // Bring navbar back into view
+            // User is scrolling up
+            if (isScrollingDown) {
+                navbar.style.transform = "translateY(0)";
+                isScrollingDown = false;
+            }
         }
-        lastScrollY = window.scrollY; // Update lastScrollY
+
+        lastScrollY = currentScrollY;
     });
 
-    // Set initial canvas size
+    // Canvas for dynamic gradient background
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    // Gradient position variables
     let gradientPositionX = 0;
     let gradientPositionY = 0;
-    const speedX = 0.5; // Horizontal movement speed
-    const speedY = 0.3; // Vertical movement speed
+    const speedX = 0.5;
+    const speedY = 0.3;
 
-    // Resize canvas dynamically on window resize
     window.addEventListener("resize", () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     });
 
     function drawGradientBackground() {
-        // Clear the canvas
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Create a dynamic gradient
         const gradient = ctx.createLinearGradient(
             gradientPositionX,
             gradientPositionY,
             canvas.width + gradientPositionX,
             canvas.height + gradientPositionY
         );
-        gradient.addColorStop(0, "#005fa3"); // Blue shade
-        gradient.addColorStop(0.5, "#00e0ff"); // Neon blue
-        gradient.addColorStop(1, "#005fa3"); // Blue shade
+        gradient.addColorStop(0, "#001f3f");
+        gradient.addColorStop(0.5, "#003f7f");
+        gradient.addColorStop(1, "#001f3f");
 
-        // Fill the canvas with the gradient
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // Update gradient position
         gradientPositionX += speedX;
         gradientPositionY += speedY;
 
-        // Reset gradient position for seamless looping
         if (gradientPositionX > canvas.width) gradientPositionX = 0;
         if (gradientPositionY > canvas.height) gradientPositionY = 0;
 
-        // Call the draw function on the next frame
         requestAnimationFrame(drawGradientBackground);
     }
 
-    // Start the gradient animation
     drawGradientBackground();
 });
