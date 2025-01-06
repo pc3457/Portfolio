@@ -3,40 +3,13 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: #fff; /* Make text white by default */
+    background: none;
     line-height: 1.6;
-    background: none; /* Moving background is handled separately */
-    position: relative;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 h1, h2, h3 {
     margin: 0;
-}
-
-/* Moving Background */
-.moving-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Ensure it stays behind everything */
-    background: linear-gradient(120deg, #001f3f, #003f7f);
-    background-size: 300% 300%;
-    animation: moveBackground 8s infinite linear;
-}
-
-@keyframes moveBackground {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
 }
 
 /* Navbar */
@@ -68,6 +41,36 @@ h1, h2, h3 {
     font-weight: 500;
 }
 
+/* Background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #001f3f, #003f7f);
+    z-index: -2; /* Ensure it's below all content */
+}
+
+.moving-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(120deg, #001f3f, #003f7f);
+    background-size: 300% 300%;
+    animation: moveBackground 8s infinite linear;
+}
+
+@keyframes moveBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 /* Hero Section */
 .hero {
     position: relative;
@@ -76,9 +79,7 @@ h1, h2, h3 {
     flex-direction: column;
     justify-content: center; /* Center content vertically */
     align-items: center;
-    color: white;
     text-align: center;
-    padding: 0 20px; /* Padding to avoid text touching edges */
 }
 
 .hero-container {
@@ -87,7 +88,7 @@ h1, h2, h3 {
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    max-width: 1200px; /* Prevent excessive width */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -108,7 +109,7 @@ h1, h2, h3 {
 /* Scroll-Down Section */
 .scroll-down {
     position: absolute;
-    bottom: 20px; /* Stay at the bottom of the viewport */
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -132,13 +133,14 @@ h1, h2, h3 {
     animation: bounce 2s infinite ease-in-out;
 }
 
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 @keyframes bounce {
-    0%, 100% {
-        transform: rotate(45deg) translateY(0);
-    }
-    50% {
-        transform: rotate(45deg) translateY(10px);
-    }
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(10px); }
 }
 
 /* Section Styles */
@@ -147,9 +149,9 @@ section {
     padding: 60px 20px;
     margin: 40px auto;
     max-width: 900px;
-    background: rgba(18, 18, 18, 0.9); /* Semi-transparent to blend with background */
+    background: rgba(0, 0, 0, 0.8); /* Black transparent box */
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     z-index: 2;
 }
@@ -157,7 +159,7 @@ section {
 .section-container h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: white; /* Changed from #00e0ff to white */
+    color: white; /* Ensure headings are white */
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -167,7 +169,7 @@ section {
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 20px;
-    color: #bbb;
+    color: #ddd; /* Softer white for text */
 }
 
 .about a.btn-secondary {
@@ -195,16 +197,16 @@ section {
 }
 
 .project-card {
-    background: rgba(26, 26, 26, 0.9);
+    background: rgba(0, 0, 0, 0.9); /* Black with opacity */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .project-card h3 {
@@ -222,6 +224,6 @@ section {
 .footer {
     text-align: center;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.8);
+    background: #000;
     color: white;
 }
