@@ -1,34 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Dynamic Moving Background Functionality
-    const canvas = document.getElementById("wave-canvas");
-    const ctx = canvas.getContext("2d");
-
     // Navbar hide/show functionality
     const navbar = document.querySelector(".navbar");
     let lastScrollY = window.scrollY;
-    let isScrollingDown = false;
 
     window.addEventListener("scroll", () => {
         const currentScrollY = window.scrollY;
 
         if (currentScrollY > lastScrollY && currentScrollY > 50) {
             // User is scrolling down
-            if (!isScrollingDown) {
-                navbar.style.transform = "translateY(-100%)";
-                isScrollingDown = true;
-            }
+            navbar.classList.add("hidden");
         } else {
             // User is scrolling up
-            if (isScrollingDown) {
-                navbar.style.transform = "translateY(0)";
-                isScrollingDown = false;
-            }
+            navbar.classList.remove("hidden");
         }
 
         lastScrollY = currentScrollY;
     });
 
-    // Canvas for dynamic gradient background
+    // Dynamic Moving Background Functionality
+    const canvas = document.getElementById("wave-canvas");
+    const ctx = canvas.getContext("2d");
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
