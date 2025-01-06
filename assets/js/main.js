@@ -3,6 +3,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("wave-canvas"); // Reusing the canvas element
     const ctx = canvas.getContext("2d");
 
+    // Navbar functionality
+    const navbar = document.querySelector(".navbar");
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > lastScrollY) {
+            // Scrolling down
+            navbar.style.transform = "translateY(-100%)"; // Move navbar out of view
+        } else {
+            // Scrolling up
+            navbar.style.transform = "translateY(0)"; // Bring navbar back into view
+        }
+        lastScrollY = window.scrollY; // Update lastScrollY
+    });
+
     // Set initial canvas size
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;

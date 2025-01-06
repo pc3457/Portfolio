@@ -19,6 +19,12 @@ h1, h2, h3 {
     width: 100%;
     z-index: 1000;
     background: rgba(0, 0, 0, 0.8);
+    padding: 15px 20px;
+    transition: transform 0.3s  ease-in-out; /* Smooth transition for hiding */
+}
+
+.navbar.hidden {
+    transform: translateY(-100%); /* Moves the navbar out of view */
 }
 
 .navbar .logo {
@@ -136,7 +142,7 @@ body::before {
 /* Scroll-Down Section */
 .scroll-down {
     position: absolute;
-    bottom: 20px;
+    bottom: 30px; /* Keep it at the bottom of the section */
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -151,14 +157,14 @@ body::before {
 }
 
 .scroll-down .arrow-down {
-    margin-top: 10px;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 15px solid white; /* Creates the downward-pointing arrow */
+    display: inline-block;
+    margin-top: 10px; /* Add space between text and arrow */
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg); /* Rotates the arrow */
     animation: bounce 2s infinite ease-in-out;
-    display: block;
 }
 
 @keyframes fadeIn {
@@ -167,8 +173,12 @@ body::before {
 }
 
 @keyframes bounce {
-    0%, 100% { transform: rotate(45deg) translateY(0); }
-    50% { transform: rotate(45deg) translateY(10px); }
+    0%, 100% {
+        transform: rotate(45deg) translateY(0);
+    }
+    50% {
+        transform: rotate(45deg) translateY(10px);
+    }
 }
 
 /* Section Styles */
