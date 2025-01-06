@@ -19,13 +19,12 @@ h1, h2, h3 {
     width: 100%;
     z-index: 1000;
     background: rgba(0, 0, 0, 0.8);
-    padding: 15px 20px;
 }
 
 .navbar .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #00e0ff;
+    color: #eff4f5;
     text-decoration: none;
 }
 
@@ -106,6 +105,34 @@ body::before {
     z-index: 1;
 }
 
+/* Hero Text Fade-In Animation */
+.hero h1,
+.hero p {
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start slightly below */
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.hero h1 {
+    animation-delay: 0.5s; /* Delayed appearance for the title */
+}
+
+.hero p {
+    animation-delay: 1s; /* Delayed appearance for the subtitle */
+}
+
+/* Keyframes for Fade-In Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Start slightly below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Move to the original position */
+    }
+}
+
 /* Scroll-Down Section */
 .scroll-down {
     position: absolute;
@@ -125,12 +152,13 @@ body::before {
 
 .scroll-down .arrow-down {
     margin-top: 10px;
-    width: 25px;
-    height: 25px;
-    border: 2px solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid white; /* Creates the downward-pointing arrow */
     animation: bounce 2s infinite ease-in-out;
+    display: block;
 }
 
 @keyframes fadeIn {
@@ -176,7 +204,7 @@ section {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #005fa3;
+    background-color: #003f7f;
     color: white;
     border-radius: 5px;
     font-weight: bold;
@@ -200,7 +228,7 @@ section {
     background: rgba(0, 0, 0, 0.9); /* Black with opacity */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 3px 6px rgb(23 66 214 / 76%);
     text-align: center;
 }
 
@@ -212,7 +240,7 @@ section {
 .project-card h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #00e0ff;
+    color: #eef2f2;
 }
 
 .project-card p {
