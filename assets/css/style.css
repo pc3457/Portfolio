@@ -4,12 +4,39 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    background: none;
     line-height: 1.6;
+    background: none; /* Moving background is handled separately */
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 h1, h2, h3 {
     margin: 0;
+}
+
+/* Moving Background */
+.moving-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it stays behind everything */
+    background: linear-gradient(120deg, #001f3f, #003f7f);
+    background-size: 300% 300%;
+    animation: moveBackground 8s infinite linear;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Navbar */
@@ -41,34 +68,6 @@ h1, h2, h3 {
     font-weight: 500;
 }
 
-/* Background */
-.moving-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: linear-gradient(120deg, #001f3f, #003f7f);
-    background-size: 300% 300%;
-    animation: moveBackground 8s infinite linear;
-}
-/* Bounce Animation */
-@keyframes bounce {
-    0%, 100% {
-        transform: rotate(45deg) translateY(0);
-    }
-    50% {
-        transform: rotate(45deg) translateY(10px);
-    }
-}
-
-@keyframes moveBackground {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
 /* Hero Section */
 .hero {
     position: relative;
@@ -79,6 +78,7 @@ h1, h2, h3 {
     align-items: center;
     color: white;
     text-align: center;
+    padding: 0 20px; /* Padding to avoid text touching edges */
 }
 
 .hero-container {
@@ -132,14 +132,13 @@ h1, h2, h3 {
     animation: bounce 2s infinite ease-in-out;
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
 @keyframes bounce {
-    0%, 100% { transform: rotate(45deg) translateY(0); }
-    50% { transform: rotate(45deg) translateY(10px); }
+    0%, 100% {
+        transform: rotate(45deg) translateY(0);
+    }
+    50% {
+        transform: rotate(45deg) translateY(10px);
+    }
 }
 
 /* Section Styles */
@@ -148,9 +147,9 @@ section {
     padding: 60px 20px;
     margin: 40px auto;
     max-width: 900px;
-    background: #121212;
+    background: rgba(18, 18, 18, 0.9); /* Semi-transparent to blend with background */
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     text-align: center;
     z-index: 2;
 }
@@ -158,7 +157,7 @@ section {
 .section-container h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #00e0ff;
+    color: white; /* Changed from #00e0ff to white */
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -196,16 +195,16 @@ section {
 }
 
 .project-card {
-    background: #1a1a1a;
+    background: rgba(26, 26, 26, 0.9);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 .project-card h3 {
@@ -223,6 +222,6 @@ section {
 .footer {
     text-align: center;
     padding: 20px;
-    background: #000;
+    background: rgba(0, 0, 0, 0.8);
     color: white;
 }
