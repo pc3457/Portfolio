@@ -337,6 +337,10 @@ section {
     box-shadow: 2px 3px 6px rgb(23 66 214 / 76%);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content spacing */
+    height: 100%; /* Ensures all cards are of equal height */
 }
 
 .project-card img.project-image {
@@ -359,7 +363,9 @@ section {
 
 .project-card p {
     font-size: 1rem;
-    color: #bbb;
+    color: #bbb; /* Subdued text color */
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allows this section to take extra space if needed */
 }
 
 .project-card a.btn-secondary {
