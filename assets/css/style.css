@@ -589,6 +589,19 @@ h2 {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* More pronounced shadow */
 }
 
+/* General Icon Styling */
+.contact i, .footer .social-icons a i {
+    font-size: 2rem; /* Increase the size of the icons */
+    margin: 0 15px; /* Add space between the icons */
+    color: white; /* Ensure consistent color */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transitions */
+}
+
+.contact i:hover, .footer .social-icons a i:hover {
+    color: #00e0ff; /* Change color on hover */
+    transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
 /* Footer */
 .footer {
     font-family: 'Roboto', sans-serif;
