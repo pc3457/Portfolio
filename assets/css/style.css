@@ -468,17 +468,68 @@ section {
 
 /* Introductory Card */
 .intro-card {
-    background: rgba(0, 0, 0, 0.9); /* Dark translucent background */
-    color: #d0d7db; /* Softer white text */
+    background: rgba(0, 0, 0, 0.8); /* Dark translucent background */
+    color: white; /* White text for readability */
     padding: 20px;
-    margin-bottom: 40px; /* Space between intro and project grid */
+    margin-bottom: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     text-align: left;
     font-family: 'Roboto', sans-serif;
     line-height: 1.8;
     max-width: 1200px;
-    margin: 0 auto 40px auto; /* Center horizontally */
+    margin: 0 auto; /* Center horizontally */
+}
+
+/* Project Card */
+.project-card {
+    background: rgba(0, 0, 0, 0.9); /* Darker background */
+    color: #d0d7db; /* Softer text color */
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Full-width centering */
+}
+
+.project-card img {
+    max-width: 100%; /* Responsive image */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.project-card h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+}
+
+.project-card p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #bbb;
+}
+
+.project-card .btn-secondary {
+    padding: 10px 20px;
+    background-color: #003f7f;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.project-card .btn-secondary:hover {
+    background-color: #00e0ff;
+    transform: translateY(-3px);
 }
 
 /* Footer */
