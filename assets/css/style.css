@@ -484,7 +484,7 @@ section {
 /* Projects Section */
 .projects-section {
     padding: 60px 20px;
-    background: rgba(0, 0, 0, 0.9);
+    background: none;
     color: white;
 }
 
@@ -502,7 +502,7 @@ h2 {
 
 .intro-card {
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);
+    background:rgba(0, 0, 0, 0.9);
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 40px;
