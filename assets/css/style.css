@@ -510,17 +510,6 @@ h2 {
     color: white;
 }
 
-/* Projects Section */
-.projects-section {
-    padding: 60px 20px;
-    background: rgba(0, 0, 0, 0.9); /* Consistent dark background */
-    color: white;
-}
-
-.projects-container {
-    max-width: 1000px; /* Restrict the container width for better focus */
-    margin: 0 auto;
-}
 
 /* Project Card - Large */
 .project-card-large {
