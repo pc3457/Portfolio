@@ -468,17 +468,17 @@ section {
 
 /* Introductory Card */
 .intro-card {
-    background: rgba(0, 0, 0, 0.8); /* Dark translucent background */
-    color: white; /* White text for readability */
-    padding: 20px;
-    margin-bottom: 40px;
+    background: rgba(255, 255, 255, 0.1); /* Subtle translucent background */
+    color: white;
+    padding: 30px; /* Slightly increase padding for better spacing */
+    margin-bottom: 50px; /* More space between intro and first project card */
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    text-align: left;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow for focus */
+    text-align: center;
     font-family: 'Roboto', sans-serif;
     line-height: 1.8;
-    max-width: 1200px;
-    margin: 0 auto; /* Center horizontally */
+    max-width: 1000px; /* Restrict width for better readability */
+    margin: 0 auto;
 }
 
 /* Projects Section */
@@ -510,57 +510,94 @@ h2 {
     color: white;
 }
 
+/* Projects Section */
+.projects-section {
+    padding: 60px 20px;
+    background: rgba(0, 0, 0, 0.9); /* Consistent dark background */
+    color: white;
+}
+
+.projects-container {
+    max-width: 1000px; /* Restrict the container width for better focus */
+    margin: 0 auto;
+}
+
 /* Project Card - Large */
 .project-card-large {
     display: flex;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.8);
-    margin-bottom: 40px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    align-items: center; /* Center content within the card */
+    background: rgba(0, 0, 0, 0.85); /* Slightly darker background for contrast */
+    margin-bottom: 50px; /* Add more space between cards */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6); /* More prominent shadow */
     overflow: hidden;
-    max-width: 100%; /* Ensure the card doesn't exceed its container */
+    max-width: 100%; /* Ensure full width */
 }
 
 .project-card-large img {
-    width: 100%; /* Ensure the image takes the full width of the card */
-    max-height: 300px; /* Limit the height to maintain proportions */
-    object-fit: cover; /* Ensure the image is cropped neatly */
+    width: 100%; /* Full width image */
+    max-height: 250px; /* Limit height */
+    object-fit: cover; /* Maintain proportions */
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
+/* Project Content */
 .project-card-large .project-content {
     text-align: center;
-    padding: 10px;
+    padding: 10px 15px;
 }
 
 .project-card-large .project-content h3 {
     font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-weight: bold;
+    margin-bottom: 15px;
     color: #00e0ff;
 }
 
 .project-card-large .project-content p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 20px;
-    color: white;
+    color: #f1f1f1; /* Softer white for better readability */
 }
 
 .project-card-large .btn-secondary {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #003f7f;
+    padding: 12px 25px;
+    background-color: #005fa3;
     color: white;
     border-radius: 5px;
     text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease;
 }
 
 .project-card-large .btn-secondary:hover {
     background-color: #00e0ff;
     transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* General Section Spacing */
+.projects-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: white;
+}
+
+/* Smooth Transition */
+.project-card-large,
+.intro-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card-large:hover,
+.intro-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* More pronounced shadow */
 }
 
 /* Footer */
