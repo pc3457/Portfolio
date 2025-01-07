@@ -149,7 +149,7 @@ body::before {
 }
 
 .hero-text .hero-subheading {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #00e0ff;
     margin-bottom: 15px; /* Reduced margin */
     animation-delay: 0.7s;
@@ -320,6 +320,10 @@ section {
 }
 
 /* Projects Section */
+.projects {
+    padding: 60px 20px;
+}
+
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -332,6 +336,14 @@ section {
     border-radius: 10px;
     box-shadow: 2px 3px 6px rgb(23 66 214 / 76%);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card img.project-image {
+    max-width: 100%; /* Responsive images */
+    border-radius: 10px;
+    margin-bottom: 15px; /* Space below the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .project-card:hover {
@@ -348,6 +360,22 @@ section {
 .project-card p {
     font-size: 1rem;
     color: #bbb;
+}
+
+.project-card a.btn-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #003f7f; /* Button background */
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.project-card a.btn-secondary:hover {
+    background-color: #00e0ff; /* Hover effect */
+    transform: translateY(-3px);
 }
 
 /* About Section */
