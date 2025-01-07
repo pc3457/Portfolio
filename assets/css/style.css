@@ -105,6 +105,7 @@ body::before {
     align-items: center;
     text-align: center;
     padding: 0 20px;
+    background: linear-gradient(120deg, #001f3f, #003f7f); /* Consistent background */
 }
 
 .hero-container {
@@ -112,7 +113,7 @@ body::before {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 30px; /* Reduced gap for compactness */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -126,9 +127,9 @@ body::before {
 
 .hero-text h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 3.5rem; /* Balanced font size */
+    font-size: 3.2rem; /* Slightly reduced font size */
     font-weight: 800;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #eff4f5;
     line-height: 1.2;
     opacity: 0;
@@ -138,10 +139,10 @@ body::before {
 
 .hero-text p {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.2rem; /* Slightly compact */
     font-weight: 400;
     color: #d0d7db;
-    margin-bottom: 15px;
+    margin-bottom: 10px; /* Reduced margin */
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s ease-in-out forwards;
@@ -150,7 +151,7 @@ body::before {
 .hero-text .hero-subheading {
     font-size: 1.1rem;
     color: #00e0ff;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reduced margin */
     animation-delay: 0.7s;
 }
 
@@ -158,21 +159,23 @@ body::before {
     font-size: 1.2rem;
     color: #eff4f5;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reduced margin */
     animation-delay: 1s;
 }
 
+/* Hero Buttons */
 .hero-buttons {
     display: flex;
-    gap: 15px;
+    gap: 15px; /* Compact spacing between buttons */
     margin-top: 20px;
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeInUp 1s ease-in-out forwards 1.3s;
+    animation: fadeInUp 1.2s ease-in-out forwards;
 }
 
 .hero-buttons a {
-    padding: 12px 25px;
+    display: inline-block;
+    padding: 12px 25px; /* Compact button size */
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     font-weight: 600;
@@ -181,12 +184,14 @@ body::before {
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Button shadow */
+    text-align: center;
+    min-width: 140px; /* Uniform button size */
 }
 
 .hero-buttons a.btn-secondary {
     background-color: transparent;
-    border: 1px solid #00e0ff;
+    border: 2px solid #00e0ff;
     color: #00e0ff;
 }
 
@@ -196,20 +201,24 @@ body::before {
     transform: translateY(-3px);
 }
 
+.hero-buttons a.btn-secondary:hover {
+    background-color: #005fa3;
+    border-color: #005fa3;
+    color: #fff;
+}
+
+/* Hero Image */
 .hero-image img {
     max-width: 300px;
     border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     z-index: 1;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease-in-out forwards 1.6s;
 }
 
 /* Scroll-Down Section */
 .scroll-down {
     position: absolute;
-    bottom: 30px;
+    bottom: 30px; /* Keep at the bottom */
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -218,21 +227,23 @@ body::before {
 }
 
 .scroll-down p {
+    margin: 0;
     font-size: 1rem;
     font-weight: 500;
 }
 
 .scroll-down .arrow-down {
-    margin-top: 10px;
-    width: 25px;
-    height: 25px;
+    display: inline-block;
+    margin-top: 10px; /* Space between text and arrow */
+    width: 20px;
+    height: 20px;
     border: 2px solid white;
     border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
+    transform: rotate(45deg); /* Rotate the arrow */
     animation: bounce 2s infinite ease-in-out;
 }
 
-/* Fade-In Keyframes */
+/* Keyframes for Fade-In and Bounce Animations */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -252,7 +263,6 @@ body::before {
         transform: rotate(45deg) translateY(10px);
     }
 }
-
 /* Section Styles */
 .section-container h2 {
     font-family: 'Montserrat', sans-serif;
