@@ -385,61 +385,83 @@ section {
 }
 
 /* About Section */
-.about-section .section-container {
-    max-width: 1000px; /* Wider container */
-    padding: 40px 20px;
-    background: rgba(0, 0, 0, 0.8); /* Match main page */
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+.about-section {
+    padding: 60px 20px;
+    background: linear-gradient(120deg, #001f3f, #003f7f); /* Same as main page */
 }
 
-/* About Intro */
-.about-intro {
+.about-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.about-photo img {
-    max-width: 200px;
-    height: auto;
-    border-radius: 50%; /* Circular photo */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-}
-
-.about-text {
-    max-width: 500px;
-}
-
-.about-details {
-    margin-bottom: 40px;
+.about-box {
+    background: rgba(0, 0, 0, 0.8);
+    color: #d0d7db;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 550px;
     text-align: left;
 }
 
-.about-details h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
+.about-box h3 {
+    font-size: 1.5rem;
     font-weight: 600;
-    color: white;
     margin-bottom: 15px;
+    color: #00e0ff;
 }
 
-.about-details ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    color: #d0d7db;
+.about-box p, .about-box ul {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+.about-box ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.about-photo img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.skill-category h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: #00e0ff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #00e0ff;
+    padding-bottom: 5px;
+}
+
+.skill-category h4 span {
+    font-weight: 400; /* Lighter weight for 'still honing' note */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    color: #d0d7db; /* Subtle color */
+}
+
+.skill-category ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.skill-category li {
     font-family: 'Roboto', sans-serif;
-}
-
-.skills-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Grid layout for skills */
-    gap: 10px;
-    margin-top: 15px;
+    font-size: 1rem;
+    color: #eff4f5;
+    margin-bottom: 8px;
 }
 
 /* Footer */
