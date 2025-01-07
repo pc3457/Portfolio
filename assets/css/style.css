@@ -466,6 +466,21 @@ section {
     margin-bottom: 8px;
 }
 
+/* Introductory Card */
+.intro-card {
+    background: rgba(0, 0, 0, 0.9); /* Dark translucent background */
+    color: #d0d7db; /* Softer white text */
+    padding: 20px;
+    margin-bottom: 40px; /* Space between intro and project grid */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    max-width: 1200px;
+    margin: 0 auto 40px auto; /* Center horizontally */
+}
+
 /* Footer */
 .footer {
     font-family: 'Roboto', sans-serif;
