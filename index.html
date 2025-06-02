@@ -132,5 +132,38 @@
                 this.textContent = visible ? "💬 Chat with Me" : "✖ Close Chat";
             });
         </script>
+        <!-- Floating Chat Bubble with Tooltip -->
+        <div id="chatBubble" class="chat-bubble">
+            💬
+            <span class="chat-tooltip">Ask Me Anything</span>
+        </div>
+
+        <!-- Floating Chat Popup -->
+        <div id="chatPopup" class="chat-popup">
+            <div class="chat-header">
+                <span>Ask Me Anything</span>
+                <button id="closeChat" class="close-btn">&times;</button>
+            </div>
+            <iframe 
+                src="https://parthchaturvedi5-career-conversation.hf.space" 
+                width="100%" 
+                height="400" 
+                style="border: none; border-radius: 0 0 10px 10px;">
+            </iframe>
+        </div>
+
+        <script>
+            const bubble = document.getElementById("chatBubble");
+            const popup = document.getElementById("chatPopup");
+            const close = document.getElementById("closeChat");
+        
+            bubble.addEventListener("click", () => {
+                popup.style.display = "block";
+            });
+        
+            close.addEventListener("click", () => {
+                popup.style.display = "none";
+            });
+        </script>
     </body>
 </html>
